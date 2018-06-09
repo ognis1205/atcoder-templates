@@ -120,11 +120,6 @@ public class Main {
         }
 
         public String nextLine() {
-            return this.nextLine(true);
-        }
-
-        public String nextLine(boolean skipLine) {
-            if (skipLine) this.skipLine();
             StringBuilder sb = new StringBuilder();
             if (this.pointer > 0 && this.buffer[this.pointer - 1] == '\n') {
                 this.buffer[this.pointer - 1] = ' ';
@@ -151,17 +146,12 @@ public class Main {
         }
 
         public int nextChars(char[] chars) {
-            return this.nextChars(chars, true);
-        }
-
-        public int nextChars(char[] chars, boolean skipLine) {
-            if (skipLine) this.skipLine();
             int l = 0;
             while (l < chars.length && this.hasNextInLine()) {
                 chars[l++] = (char) this.nextChar();
             }
             if (this.hasNextInLine()) return -1;
-            this.skipLine();
+            //this.skipLine();
             return l;
         }
 
@@ -184,17 +174,12 @@ public class Main {
         }
 
         public int nextInts(int[] ints) {
-            return this.nextInts(ints, true);
-        }
-
-        public int nextInts(int[] ints, boolean skipLine) {
-            if (skipLine) this.skipLine();
             int l = 0;
             while (l < ints.length && this.hasNextInLine()) {
                 ints[l++] = this.nextInt();
             }
             if (this.hasNextInLine()) return -1;
-            this.skipLine();
+            //this.skipLine();
             return l;
         }
 
@@ -217,17 +202,12 @@ public class Main {
         }
 
         public int nextLongs(long[] longs) {
-            return this.nextLongs(longs, true);
-        }
-
-        public int nextLongs(long[] longs, boolean skipLine) {
-            if (skipLine) this.skipLine();
             int l = 0;
             while (l < longs.length && this.hasNextInLine()) {
                 longs[l++] = this.nextLong();
             }
             if (this.hasNextInLine()) return -1;
-            this.skipLine();
+            //this.skipLine();
             return l;
         }
 
@@ -236,17 +216,12 @@ public class Main {
         }
 
         public int nextDoubles(double[] doubles) {
-            return this.nextDoubles(doubles, true);
-        }
-
-        public int nextDoubles(double[] doubles, boolean skipLine) {
-            if (skipLine) this.skipLine();
             int l = 0;
             while (l < doubles.length && this.hasNextInLine()) {
                 doubles[l++] = this.nextDouble();
             }
             if (this.hasNextInLine()) return -1;
-            this.skipLine();
+            //this.skipLine();
             return l;
         }
     }
