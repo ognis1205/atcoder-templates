@@ -19,6 +19,42 @@ public class Main {
         System.out.println();
     }
 
+    private static int getLowerBound(Comparable[] target, Comparable key) {
+        int l = 0;
+        int r = target.length - 1;
+        int m = (l + r) / 2;
+        while (true) {
+            if (target[m].compareTo(key) == 0 || target[m].compareTo(key) > 0) {
+                r = m - 1;
+                if (r < l)
+                    return m;
+            } else {
+                l = m + 1;
+                if (r < l)
+                    return m < target.length - 1 ? m + 1 : -1;
+            }
+            m = (l + r) / 2;
+        }
+    }
+
+    private static int getUpperBound(Comparable[] target, Comparable key) {
+        int l = 0;
+        int r = target.length - 1;
+        int m = (l + r) / 2;
+        while (true) {
+            if (target[m].compareTo(key) == 0 || target[m].compareTo(key) < 0) {
+                l = m + 1;
+                if (r < l)
+                    return m < target.length - 1 ? m + 1 : -1;
+            } else {
+                r = m - 1;
+                if (r < l)
+                    return m;
+            }
+            m = (l + r) / 2;
+        }
+    }
+
     private class FastScanner implements Closeable {
         private InputStream inputStream = System.in;
         private byte[] buffer = new byte[1024];
