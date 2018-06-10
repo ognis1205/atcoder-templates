@@ -19,12 +19,12 @@ public class Main {
         System.out.println();
     }
 
-    private static int getLowerBound(Comparable[] target, Comparable key) {
+    private static int getLowerBound(int[] target, int key) {
         int l = 0;
         int r = target.length - 1;
         int m = (l + r) / 2;
         while (true) {
-            if (target[m].compareTo(key) == 0 || target[m].compareTo(key) > 0) {
+            if (target[m] == key || target[m] > key) {
                 r = m - 1;
                 if (r < l)
                     return m;
@@ -37,12 +37,12 @@ public class Main {
         }
     }
 
-    private static int getUpperBound(Comparable[] target, Comparable key) {
+    private static int getUpperBound(int[] target, int key) {
         int l = 0;
         int r = target.length - 1;
         int m = (l + r) / 2;
         while (true) {
-            if (target[m].compareTo(key) == 0 || target[m].compareTo(key) < 0) {
+            if (target[m] == key || target[m] < key) {
                 l = m + 1;
                 if (r < l)
                     return m < target.length - 1 ? m + 1 : -1;
