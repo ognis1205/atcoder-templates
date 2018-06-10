@@ -151,7 +151,6 @@ public class Main {
                 chars[l++] = (char) this.nextChar();
             }
             if (this.hasNextInLine()) return -1;
-            //this.skipLine();
             return l;
         }
 
@@ -179,7 +178,6 @@ public class Main {
                 ints[l++] = this.nextInt();
             }
             if (this.hasNextInLine()) return -1;
-            //this.skipLine();
             return l;
         }
 
@@ -207,7 +205,6 @@ public class Main {
                 longs[l++] = this.nextLong();
             }
             if (this.hasNextInLine()) return -1;
-            //this.skipLine();
             return l;
         }
 
@@ -221,7 +218,6 @@ public class Main {
                 doubles[l++] = this.nextDouble();
             }
             if (this.hasNextInLine()) return -1;
-            //this.skipLine();
             return l;
         }
     }
