@@ -29,7 +29,7 @@ def array(n, value=0):
     return [deepcopy(value) for i in range(n)]
 
 def main():
-    return
+    return 0
 
 
 if __name__ == "__main__":
