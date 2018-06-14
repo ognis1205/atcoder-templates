@@ -18,20 +18,20 @@ from traceback import format_exc
 
 
 def get_line():
-    return input()
+   return input()
 
 def get_line_as(parse, in_array=False):
-    return map(parse, get_line().split()) if in_array else map(parse, get_line().split())[0]
+   return map(parse, get_line().split()) if in_array else map(parse, get_line().split())[0]
 
 def array(n, value=0):
-    return [deepcopy(value) for i in range(n)]
+   return [deepcopy(value) for i in range(n)]
 
 def main():
-    return 0
+   return 0
 
 
 if __name__ == "__main__":
-    try:
-        main()
-    except:
-        print(format_exc(), file=sys.stderr)
+   try:
+      main()
+   except:
+      print(format_exc(), file=sys.stderr)
